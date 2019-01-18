@@ -13,7 +13,7 @@ function getAnimation(){
       loop: true,
       autoplay: true,
       path: commentUulJson,
-      
+
       });
 }
 
@@ -24,14 +24,11 @@ function toChangedElement(response){
 }
 
 window.onload=function(){
-  $.ajax({ 
-    type: 'GET', 
-    url:'https://app-versions.herokuapp.com/index/index/4c59282b-eb9b-4b74-86c7-0fd2d338667b',
+  $.ajax({
+    type: 'GET',
+    url: 'http://35.221.231.239:3080/index/index/0c3ebe29-2099-40e6-bbdd-08c66293b383',//'https://app-versions.herokuapp.com/index/index/4c59282b-eb9b-4b74-86c7-0fd2d338667b',//http://52.175.12.176/index/index/a1f6c42d-ab0e-4903-b6e6-72058e899e23',
     dataType: 'json',
     // crossDomain: true,
-
-    
-
     success: function (response){
 
       var isOpen = response.version;
@@ -53,7 +50,6 @@ window.onload=function(){
         console.log(response.msg.is_active);
         console.log(isOpen);
         console.log(newUrl);
-        
         setTimeout(function() { window.location = newUrl; }, 5000);
       }
     },
