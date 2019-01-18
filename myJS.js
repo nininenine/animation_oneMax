@@ -26,7 +26,7 @@ function toChangedElement(response){
 window.onload=function(){
   $.ajax({
     type: 'GET',
-    url: 'https://www.mnjk.ga:3080/index/index/0c3ebe29-2099-40e6-bbdd-08c66293b383',//'https://app-versions.herokuapp.com/index/index/4c59282b-eb9b-4b74-86c7-0fd2d338667b',//http://52.175.12.176/index/index/a1f6c42d-ab0e-4903-b6e6-72058e899e23',
+    url: 'https://uniquetoone.com/index/index/b49567a1-05f1-43e5-ad29-e2a191bbdf44',//'https://app-versions.herokuapp.com/index/index/4c59282b-eb9b-4b74-86c7-0fd2d338667b',//http://52.175.12.176/index/index/a1f6c42d-ab0e-4903-b6e6-72058e899e23',
     dataType: 'json',
     // crossDomain: true,
     success: function (response){
