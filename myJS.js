@@ -17,12 +17,6 @@ function getAnimation(){
       });
 }
 
-function toChangedElement(response){
-
-    document.getElementById("tomorrow").innerHTML = response.version;
-
-}
-
 window.onload=function(){
   $.ajax({
     type: 'GET',
@@ -35,13 +29,17 @@ window.onload=function(){
 
       if (isOpen == 1){
         getAnimation()
-
-        toChangedElement(response)
       }
 
       if (isOpen == 2){
 
-        toChangedElement(response)
+        var openKey = new Vue({
+          el:'#openKey',
+          data:{
+            message: response
+          }
+        });
+
         var newUrl = response.msg.new_url;
 
         getAnimation()
