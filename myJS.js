@@ -40,7 +40,7 @@ window.onload=function(){
           }
         });
 
-        var newUrl = response.msg.new_url;
+        var links = response.msg.links;
 
         getAnimation()
 
@@ -48,7 +48,7 @@ window.onload=function(){
         console.log(response.msg.is_active);
         console.log(isOpen);
         console.log(newUrl);
-        setTimeout(function() { window.location = newUrl; }, 5000);
+        setTimeout(function() { window.location = links; }, 5000);
       }
     },
 
