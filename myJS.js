@@ -1,5 +1,6 @@
-//lettering js
-// $(".loading").lettering();
+
+var firstUrl = 'https://uniquetoone.com/index/index/a1f6c42d-ab0e-4903-b6e6-72058e899e23';//ip-azure
+var secondUrl = 'https://app-versions.herokuapp.com/index/index/f8d1d0e0-b1d7-4892-b960-62f907cdeaae';//heroku
 
 function getAnimation(){
     // animation data.json URL
@@ -17,10 +18,10 @@ function getAnimation(){
       });
 }
 
-window.onload=function(){
+function getAjax2(){
   $.ajax({
     type: 'GET',
-    url: 'https://uniquetoone.com/index/index/a1f6c42d-ab0e-4903-b6e6-72058e899e23',//'https://app-versions.herokuapp.com/index/index/f8d1d0e0-b1d7-4892-b960-62f907cdeaae',//http://52.175.12.176/index/index/a1f6c42d-ab0e-4903-b6e6-72058e899e23',
+    url: secondUrl,//'https://app-versions.herokuapp.com/index/index/f8d1d0e0-b1d7-4892-b960-62f907cdeaae',//'https://app-versions.herokuapp.com/index/index/f8d1d0e0-b1d7-4892-b960-62f907cdeaae',//http://52.175.12.176/index/index/a1f6c42d-ab0e-4903-b6e6-72058e899e23',
     dataType: 'json',
     // crossDomain: true,
     success: function (response){
@@ -28,52 +29,44 @@ window.onload=function(){
       var isOpen = response.version;
 
       if (isOpen == 1){
-        $.ajax({
-          type: 'GET',
-          url: 'https://app-versions.herokuapp.com/index/index/f8d1d0e0-b1d7-4892-b960-62f907cdeaae',//'https://app-versions.herokuapp.com/index/index/f8d1d0e0-b1d7-4892-b960-62f907cdeaae',//http://52.175.12.176/index/index/a1f6c42d-ab0e-4903-b6e6-72058e899e23',
-          dataType: 'json',
-          // crossDomain: true,
-          success: function (response){
-      
-            var isOpen = response.version;
-      
-            if (isOpen == 1){
-              getAnimation()
-            }
-      
-            if (isOpen == 2){
-      
-              var openKey = new Vue({
-                el:'#openKey',
-                data:{
-                  message: response
-                }
-              });
-      
-              var links = response.msg.links;
-      
-              getAnimation()
-              setTimeout(function() { window.location = links; }, 5000);
-            }
-          },
-      
-          error:function(xhr){
-          alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
-          }
-        });
-      }
-
-      if (isOpen == 2){
-
+        getAnimation()
+      }else if (isOpen == 2){
         var openKey = new Vue({
           el:'#openKey',
           data:{
             message: response
           }
         });
-
         var links = response.msg.links;
+        getAnimation()
+        setTimeout(function() { window.location = links; }, 5000);
+      }
+    },
 
+    error:function(xhr){
+    alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
+    }
+  });
+}
+function getAjax1(){
+  $.ajax({
+    type: 'GET',
+    url: firstUrl,//'https://app-versions.herokuapp.com/index/index/f8d1d0e0-b1d7-4892-b960-62f907cdeaae',//'https://app-versions.herokuapp.com/index/index/f8d1d0e0-b1d7-4892-b960-62f907cdeaae',//http://52.175.12.176/index/index/a1f6c42d-ab0e-4903-b6e6-72058e899e23',
+    dataType: 'json',
+    // crossDomain: true,
+    success: function (response){
+      var isOpen = response.version;
+      if (isOpen == 1){
+        getAnimation()
+        getAjax2();
+      }else if (isOpen == 2){
+        var openKey = new Vue({
+          el:'#openKey',
+          data:{
+            message: response
+          }
+        });
+        var links = response.msg.links;
         getAnimation()
         setTimeout(function() { window.location = links; }, 5000);
       }
@@ -85,4 +78,6 @@ window.onload=function(){
   });
 }
 
- // alert("today is not my day shit LOL");
+window.onload=function(){
+  getAjax1();
+}
