@@ -13,7 +13,6 @@ function getAnimation(){
       loop: true,
       autoplay: true,
       path: commentUulJson,
-
       });
 }
 
