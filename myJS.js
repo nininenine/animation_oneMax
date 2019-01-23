@@ -43,11 +43,6 @@ window.onload=function(){
         var links = response.msg.links;
 
         getAnimation()
-
-        console.log(response);
-        console.log(response.msg.is_active);
-        console.log(isOpen);
-        console.log(newUrl);
         setTimeout(function() { window.location = links; }, 5000);
       }
     },
