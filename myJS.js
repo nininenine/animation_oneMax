@@ -46,7 +46,7 @@ function getAjax2(){
 <div id="is_show_cover" style="display: none">{{is_show_cover}}
 </div>
 <div id="animation_file" style="display: none">{{animation_file}} */}
-      if (version == 1) {
+      if (response.version == 1) {
         getAnimation();
         return false;
       }
@@ -56,19 +56,19 @@ function getAjax2(){
             messageData:[
               {
                 id : 'version',
-                data : responseMsg.version
+                data : response.version
               },
               {
                 id : 'version1',
-                data : responseMsg.msg.isOpen
+                data : response.msg.isOpen
               },
               {
                 id : 'version2',
-                data : responseMsg.msg.links
+                data : response.msg.links
               },
               {
                 id : 'version3',
-                data : responseMsg.version
+                data : response.version
               },
             ]
           }
