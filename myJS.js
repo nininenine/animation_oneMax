@@ -52,25 +52,27 @@ function getAjax2(){
       }
         var vueJsVariable = new Vue({
           el:'#message',
-          data:{
-            messageData:[
-              {
-                id : 'version',
-                data : response.version
-              },
-              {
-                id : 'version1',
-                data : response.msg.isOpen
-              },
-              {
-                id : 'version2',
-                data : response.msg.links
-              },
-              {
-                id : 'version3',
-                data : response.version
-              },
-            ]
+          data () {
+            return{
+              messageData:[
+                {
+                  id : 'version',
+                  data : response.version
+                },
+                {
+                  id : 'version1',
+                  data : response.msg.isOpen
+                },
+                {
+                  id : 'version2',
+                  data : response.msg.links
+                },
+                {
+                  id : 'version3',
+                  data : response.version
+                },
+              ]
+            }
           }
         });
 
