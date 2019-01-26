@@ -20,8 +20,10 @@
 </head>
 <body>
 
-<div id="message" v-for="message in messageData" style="display: none">
-  <div :id="message.id">{{ message.data }}</div>
+<div 
+  id="message"
+  style="display: none">
+  <div>{{ messageData }}</div>
 </div>
 <!-- <div id="isOpen" style="display: none">{{isOpen}}
 </div>
