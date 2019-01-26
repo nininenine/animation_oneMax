@@ -50,7 +50,7 @@ function getAjax2(){
         getAnimation();
         return false;
       }
-        var vueJsVariable = new Vue({
+      new Vue({
           el:'#message',
           data () {
             return{
