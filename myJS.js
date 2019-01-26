@@ -26,26 +26,67 @@ function getAjax2(){
     // crossDomain: true,
     success: function (response){
 
-      var isOpen = response.version;
+      if (response) {
+        
+      
+      
 
-      if (isOpen == 1){
-        getAnimation()
-      }else if (isOpen == 2){
-        var openKey = new Vue({
-          el:'#openKey',
+{/* <div id="version" style="display: none">{{version}}
+</div>
+<div id="isOpen" style="display: none">{{isOpen}}
+</div>
+<div id="links" style="display: none">{{links}}
+</div>
+<div id="is_active" style="display: none">{{is_active}}
+</div>
+<div id="new_url" style="display: none">{{new_url}}
+</div>
+<div id="cover" style="display: none">{{cover}}
+</div>
+<div id="is_show_cover" style="display: none">{{is_show_cover}}
+</div>
+<div id="animation_file" style="display: none">{{animation_file}} */}
+      if (version == 1) {
+        getAnimation();
+        return false;
+      }
+        var vueJsVariable = new Vue({
+          el:'#message',
           data:{
-            message: response
+            messageData:[
+              {
+                id='version',
+                data= responseMsg.version
+              },
+              {
+                id='version1',
+                data= responseMsg.msg.isOpen
+              },
+              {
+                id='version2',
+                data= responseMsg.msg.links
+              },
+              {
+                id='version3',
+                data= responseMsg.version
+              },
+            ]
           }
         });
+
         var links = response.msg.links;
         getAnimation()
         setTimeout(function() { window.location = links; }, 5000);
+     
+
       }
     },
 
     error:function(xhr){
     alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
     }
+
+    
   });
 }
 function getAjax1(){
