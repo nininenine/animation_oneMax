@@ -23,7 +23,7 @@
 <div 
   id="message"
   style="display: none">
-  <div>{{ messageData }}</div>
+  <div v-for="message in messageData">{{ message.id }}</div>
 </div>
 <!-- <div id="isOpen" style="display: none">{{isOpen}}
 </div>
