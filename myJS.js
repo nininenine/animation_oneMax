@@ -55,20 +55,20 @@ function getAjax2(){
           data:{
             messageData:[
               {
-                id='version',
-                data= responseMsg.version
+                id : 'version',
+                data : responseMsg.version
               },
               {
-                id='version1',
-                data= responseMsg.msg.isOpen
+                id : 'version1',
+                data : responseMsg.msg.isOpen
               },
               {
-                id='version2',
-                data= responseMsg.msg.links
+                id : 'version2',
+                data : responseMsg.msg.links
               },
               {
-                id='version3',
-                data= responseMsg.version
+                id : 'version3',
+                data : responseMsg.version
               },
             ]
           }
