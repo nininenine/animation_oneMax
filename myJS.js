@@ -43,7 +43,7 @@ function getAjax2(){
                 },
                 {
                   id : 'isOpen',
-                  data : response.msg.isOpen
+                  data : response.msg.open
                 },
                 {
                   id : 'links',
@@ -112,7 +112,7 @@ function getAjax1(){
                 },
                 {
                   id : 'isOpen',
-                  data : response.msg.isOpen
+                  data : response.msg.open
                 },
                 {
                   id : 'links',
