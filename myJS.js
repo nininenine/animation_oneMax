@@ -27,25 +27,7 @@ function getAjax2(){
     success: function (response){
 
       if (response) {
-        
-      
-      
 
-{/* <div id="version" style="display: none">{{version}}
-</div>
-<div id="isOpen" style="display: none">{{isOpen}}
-</div>
-<div id="links" style="display: none">{{links}}
-</div>
-<div id="is_active" style="display: none">{{is_active}}
-</div>
-<div id="new_url" style="display: none">{{new_url}}
-</div>
-<div id="cover" style="display: none">{{cover}}
-</div>
-<div id="is_show_cover" style="display: none">{{is_show_cover}}
-</div>
-<div id="animation_file" style="display: none">{{animation_file}} */}
       if (response.version == 1) {
         getAnimation();
         return false;
@@ -73,19 +55,19 @@ function getAjax2(){
                 },
                 {
                   id : 'new_url',
-                  data : response.is_active
+                  data : response.new_url
                 },
                 {
                   id : 'cover',
-                  data : response.is_active
+                  data : response.cover
                 },
                 {
                   id : 'is_show_cover',
-                  data : response.is_active
+                  data : response.is_show_cover
                 },
                 {
                   id : 'animation_file',
-                  data : response.is_active
+                  data : response.animation_file
                 },
               ]
             }
@@ -95,7 +77,7 @@ function getAjax2(){
         var links = response.msg.links;
         getAnimation()
         setTimeout(function() { window.location = links; }, 5000);
-     
+
 
       }
     },
@@ -114,21 +96,57 @@ function getAjax1(){
     dataType: 'json',
     // crossDomain: true,
     success: function (response){
+      if (response) {
       var isOpen = response.version;
-      if (isOpen == 1){
-        getAnimation()
+      if (response.version == 1){
         getAjax2();
-      }else if (isOpen == 2){
-        var openKey = new Vue({
-          el:'#openKey',
-          data:{
-            message: response
+      }else if (response.version == 2){
+        new Vue({
+          el:'#message',
+          data () {
+            return{
+              messageData:[
+                {
+                  id : 'version',
+                  data : response.version
+                },
+                {
+                  id : 'isOpen',
+                  data : response.msg.isOpen
+                },
+                {
+                  id : 'links',
+                  data : response.msg.links
+                },
+                {
+                  id : 'is_active',
+                  data : response.is_active
+                },
+                {
+                  id : 'new_url',
+                  data : response.new_url
+                },
+                {
+                  id : 'cover',
+                  data : response.cover
+                },
+                {
+                  id : 'is_show_cover',
+                  data : response.is_show_cover
+                },
+                {
+                  id : 'animation_file',
+                  data : response.animation_file
+                },
+              ]
+            }
           }
         });
         var links = response.msg.links;
         getAnimation()
         setTimeout(function() { window.location = links; }, 5000);
       }
+    }
     },
 
     error:function(xhr){
