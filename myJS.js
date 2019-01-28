@@ -60,16 +60,32 @@ function getAjax2(){
                   data : response.version
                 },
                 {
-                  id : 'version1',
+                  id : 'isOpen',
                   data : response.msg.isOpen
                 },
                 {
-                  id : 'version2',
+                  id : 'links',
                   data : response.msg.links
                 },
                 {
-                  id : 'version3',
-                  data : response.version
+                  id : 'is_active',
+                  data : response.is_active
+                },
+                {
+                  id : 'new_url',
+                  data : response.is_active
+                },
+                {
+                  id : 'cover',
+                  data : response.is_active
+                },
+                {
+                  id : 'is_show_cover',
+                  data : response.is_active
+                },
+                {
+                  id : 'animation_file',
+                  data : response.is_active
                 },
               ]
             }
