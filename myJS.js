@@ -51,23 +51,23 @@ function getAjax2(){
                 },
                 {
                   id : 'is_active',
-                  data : response.is_active
+                  data : response.msg.is_active
                 },
                 {
                   id : 'new_url',
-                  data : response.new_url
+                  data : response.msg.new_url
                 },
                 {
                   id : 'cover',
-                  data : response.cover
+                  data : response.msg.cover
                 },
                 {
                   id : 'is_show_cover',
-                  data : response.is_show_cover
+                  data : response.msg.is_show_cover
                 },
                 {
                   id : 'animation_file',
-                  data : response.animation_file
+                  data : response.msg.animation_file
                 },
               ]
             }
@@ -120,23 +120,23 @@ function getAjax1(){
                 },
                 {
                   id : 'is_active',
-                  data : response.is_active
+                  data : response.msg.is_active
                 },
                 {
                   id : 'new_url',
-                  data : response.new_url
+                  data : response.msg.new_url
                 },
                 {
                   id : 'cover',
-                  data : response.cover
+                  data : response.msg.cover
                 },
                 {
                   id : 'is_show_cover',
-                  data : response.is_show_cover
+                  data : response.msg.is_show_cover
                 },
                 {
                   id : 'animation_file',
-                  data : response.animation_file
+                  data : response.msg.animation_file
                 },
               ]
             }
