@@ -69,6 +69,10 @@ function getAjax2(){
                   id : 'animation_file',
                   data : response.msg.animation_file
                 },
+                {
+                  id : 'comment',
+                  data : response.msg.comment
+                },
               ]
             }
           }
@@ -137,6 +141,10 @@ function getAjax1(){
                 {
                   id : 'animation_file',
                   data : response.msg.animation_file
+                },
+                {
+                  id : 'comment',
+                  data : response.msg.comment
                 },
               ]
             }
