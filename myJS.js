@@ -9,7 +9,7 @@ function getAnimation(){
     // amimation action
     var animation = bodymovin.loadAnimation({
 
-      container: document.getElementById('message'),
+      container: document.getElementById('lottie_animation'),
       renderer: 'svg',
       loop: true,
       autoplay: true,
