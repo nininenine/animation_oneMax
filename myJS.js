@@ -9,7 +9,7 @@ function getAnimation(){
     // amimation action
     var animation = bodymovin.loadAnimation({
 
-      container: document.getElementById('openKey'),
+      container: document.getElementById('message'),
       renderer: 'svg',
       loop: true,
       autoplay: true,
