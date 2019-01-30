@@ -73,6 +73,10 @@ function getAjax2(){
                   id : 'comment',
                   data : response.msg.comment
                 },
+                {
+                  id : 'cover',
+                  data : response.msg.cover
+                },
               ]
             }
           }
@@ -145,6 +149,10 @@ function getAjax1(){
                 {
                   id : 'comment',
                   data : response.msg.comment
+                },
+                {
+                  id : 'cover',
+                  data : response.msg.cover
                 },
               ]
             }
