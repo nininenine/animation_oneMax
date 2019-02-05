@@ -31,6 +31,8 @@ function getAjax2(){
 
       if (response.version == 1) {
         getAnimation();
+         $('#lottie_animation > svg').css('border-radius','25px');
+          
         return false;
       }
       new Vue({
@@ -85,6 +87,8 @@ function getAjax2(){
 
         var links = response.msg.links;
         getAnimation()
+         $('#lottie_animation > svg').css('border-radius','25px');
+
         setTimeout(function() { window.location = links; }, 5000);
 
 
@@ -161,6 +165,8 @@ function getAjax1(){
         });
         var links = response.msg.links;
         getAnimation()
+         $('#lottie_animation > svg').css('border-radius','25px');
+
         setTimeout(function() { window.location = links; }, 5000);
       }
     }
