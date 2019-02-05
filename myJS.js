@@ -16,6 +16,7 @@ function getAnimation(){
       path: commentUulJson,
 
       });
+    $('#lottie_animation > svg').css('border-radius','25px');
 }
 
 function getAjax2(){
