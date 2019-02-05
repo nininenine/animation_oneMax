@@ -18,7 +18,7 @@ function getAnimation(){
       });
     $('#lottie_animation > svg').css('border-radius','25px');
 }
-
+$('#lottie_animation > svg').css('border-radius','25px');
 function getAjax2(){
   $.ajax({
     type: 'GET',
