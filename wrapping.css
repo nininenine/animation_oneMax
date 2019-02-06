@@ -3,9 +3,9 @@ html, body {
 }
 
 body {
-  background: -webkit-radial-gradient(center center, circle cover, #078ABE, #0D343A);
-  background: -moz-radial-gradient(center center, circle cover, #078ABE, #0D343A);
-  background: radial-gradient(circle cover at center center, #078abe, #0d343a);
+  background: -webkit-radial-gradient(center center, circle cover, #87CEFA, #0D343A);
+  background: -moz-radial-gradient(center center, circle cover, #87CEFA, #0D343A);
+  background: radial-gradient(circle cover at center center, #87CEFA, #0d343a);
 }
 
 .loading {
